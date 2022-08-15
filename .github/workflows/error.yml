@@ -1,0 +1,16 @@
+on :
+   status
+jobs:
+   if_error_or_failure:
+      runs-on: ubuntu-18.04
+      if: >-
+         github.event.state == 'error' ||
+         github.event.state == 'failure'
+      steps:
+        - env:
+            DESCRIPTION: ${{github.event.description}}
+          run : |
+             echo The status of error is $DESCRIPTION
+
+
+
