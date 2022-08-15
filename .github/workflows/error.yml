@@ -12,5 +12,38 @@ jobs:
           run : |
              echo The status of error is $DESCRIPTION
 
+#    example-job:
+#       steps:
+#       - name: Run Build Script
+#         run : ./.github/scripts/build.sh
+#         shell: bash
+# jobs :
+#    name: Save Output
+#    steps:
+#      - shell: bash
+#        run : |
+#           expr 1 + 1 >ouput.log
+#      - name: Upload the output
+#        uses: actions/upload-artifacts@v3
+#        with:
+#          name: Output-fail
+#          path: output.log
+# jobs:
+#   example-job:
+#     steps:
+#       - name: Download the arttifac 
+#         uses: actions/download-artifact@v3
+#         with :
+#           name: Output-fail
+#      steps: 
+#      - name: Job failed
+#        if: ${{failure()}} 
+
+
+
+
+    
+   
+
 
 
