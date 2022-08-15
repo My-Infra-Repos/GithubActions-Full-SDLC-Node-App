@@ -1,0 +1,19 @@
+name: "demo-action"
+on: [push]
+jobs: 
+  Explore-github_actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run : echo "The job is auyomatically pushed by ${{github.event_name}}"
+      - run : echo "This job is now running on ${{runner.os}}"
+      - run : echo "The name of the branch is ${{github.ref}} and your repository is ${{github.repository}}"
+      - name : Checkout repository code
+        uses : actions/checkout@v3
+      - run : echo "The ${{github.repository}} has been clone to the runner"
+      - run : echo "The work floe is not ready to test your code "
+      - name: List files in a repository
+        run : | 
+          ls ${{github.workspace}}
+      - name : Job status
+        run : echo "The Job status is now ${{job.status}}"
+  
