@@ -1,0 +1,21 @@
+name: Reusable workflow User  
+on:
+  workflow_dispatch:
+jobs:
+  do-it:
+    runs-on : ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one line script 
+        run : echo Resuable Workflow
+  docker:
+    uses: praveen1664/GithubActions-Full-SDLC-Node-App/.github/workflows/reusable_workflow.yml@main
+    with: 
+      image_name: my-best-image
+      tag: $GITHUB_RUN_NUMBER
+    secrets: 
+      registry_username: ${{secrets.REGISTRY_USERNAME}}
+      registry_password: ${{secrets.REGISTRY_PASSWORD}}
+      
+
