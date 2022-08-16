@@ -15,7 +15,7 @@ jobs:
       image_name: my-best-image
       tag: $GITHUB_RUN_NUMBER
     secrets: 
-      registry_username: ${{secrets.REGISTRY_USERNAME}}
-      registry_password: ${{secrets.REGISTRY_PASSWORD}}
-      
+      registry_username: ${{secrets.DOCKERHUB_USERNAME}}
+      registry_password: ${{secrets.DOCKERHUB_PASSWORD}}
+
 
