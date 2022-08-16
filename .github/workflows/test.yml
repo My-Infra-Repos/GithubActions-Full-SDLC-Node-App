@@ -1,4 +1,4 @@
-name: testing the value pass
+name: Pass values from one workflow to another workflow
 on:
   push:
     
